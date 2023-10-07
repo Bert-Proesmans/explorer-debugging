@@ -1,0 +1,31 @@
+﻿<Configuration>
+    <VGpu>disable</VGpu>
+    <Networking>enable</Networking>
+    <AudioInput>disable</AudioInput>
+    <VideoInput>disable</VideoInput>
+    <ProtectedClient>enable</ProtectedClient>
+    <PrinterRedirection>disable</PrinterRedirection>
+    <ClipboardRedirection>enable</ClipboardRedirection>
+    <MemoryInMB></MemoryInMB>
+    <MappedFolders>
+            <MappedFolder>
+                <HostFolder>F:\User Data\Git\explorer-debugging</HostFolder>
+                <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\explorer-debugging</SandboxFolder>
+                <ReadOnly>true</ReadOnly>
+            </MappedFolder>
+            <MappedFolder>
+                <HostFolder>F:\User Data\Git\explorer-debugging\symbolcache</HostFolder>
+                <SandboxFolder>C:\symbolcache</SandboxFolder>
+                <ReadOnly>false</ReadOnly>
+            </MappedFolder>
+    </MappedFolders>
+    <LogonCommand>
+    <!--
+        WARN; Double exec is required because the boot command is started with a hidden window at process start.
+        Yes, there is a WinAPI flag to hide console windows on process launch. All the examples online to
+        'hide powershell' are wrong and not robust, you need to properly launch a new windows process to robustly
+        hide a console window (cmd/powershell).
+    -->
+        <Command><![CDATA[powershell -executionpolicy unrestricted -command "Start-Process powershell.exe @('-ExecutionPolicy Bypass', '-NoExit', '-File', 'C:\Users\WDAGUtilityAccount\Desktop\explorer-debugging\boot.ps1')"]]></Command>
+    </LogonCommand>
+</Configuration>
