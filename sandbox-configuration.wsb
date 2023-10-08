@@ -15,7 +15,7 @@
             </MappedFolder>
             <MappedFolder>
                 <HostFolder>F:\User Data\Git\explorer-debugging\symbolcache</HostFolder>
-                <SandboxFolder>C:\symbolcache</SandboxFolder>
+                <SandboxFolder>C:\ProgramData\Dbg</SandboxFolder>
                 <ReadOnly>false</ReadOnly>
             </MappedFolder>
     </MappedFolders>
@@ -26,6 +26,6 @@
         'hide powershell' are wrong and not robust, you need to properly launch a new windows process to robustly
         hide a console window (cmd/powershell).
     -->
-        <Command><![CDATA[powershell -executionpolicy unrestricted -command "Start-Process powershell.exe @('-ExecutionPolicy Bypass', '-NoExit', '-File', 'C:\Users\WDAGUtilityAccount\Desktop\explorer-debugging\boot.ps1')"]]></Command>
+        <Command><![CDATA[powershell -executionpolicy unrestricted -command "Start-Process -WorkingDirectory 'C:\Users\WDAGUtilityAccount\Desktop\explorer-debugging' powershell.exe @('-ExecutionPolicy Bypass', '-NoExit', '-File', '.\boot.ps1')"]]></Command>
     </LogonCommand>
 </Configuration>

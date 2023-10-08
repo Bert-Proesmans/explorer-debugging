@@ -31,4 +31,4 @@ Add-AppxPackage '.\packages\windbg.msixbundle'
 
 Write-Information "Launching WinDBG"
 refresh-path
-windbg.exe -WX -Q -QS -QSY -QY -pd -g -o -pn explorer.exe -y "C:\symbolcache"
+WinDbgX.exe -WX -Q -QS -QSY -QY -g -o -pn explorer.exe
